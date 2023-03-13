@@ -16,12 +16,12 @@ video: Chapter 2 - Part 3
  
  1) Write down the names of the 6 major primitive types available in C++  here:
  
- 
- 
- 
- 
- 
- 
+ int
+ short
+ float
+ double
+ bool
+ char
  
  
  
@@ -64,10 +64,39 @@ void variableDeclarations()
 {
     //example:
     int number = 2; //declaration of a variable named "number", that uses the primitive type 'int', and the variable's initial value is '2'
-    
 
+    int area = 12;
+    int height = 4;
+    int width = 3;
+
+    short age = 13;
+    short aptNo = 32;
+    short weight = 40;
+
+    float radius = 3.2f;
+    float length = 0.9f;
+    float circumference = 44.44f;
+
+    double distance = 12.0;
+    double saturation = 65537.0;
+    double lightSpeed = 300000000.0;
+
+    bool isOpen = false;
+    bool setReady = false;
+    bool isAlive = true;
+
+    char r = 'r';
+    char d = 'd';
+    char s = 's';
     
     ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+
+    ignoreUnused(area, height, width,
+                 age, aptNo, weight,
+                 radius, length, circumference,
+                 distance, saturation, lightSpeed,
+                 isOpen, setReady, isAlive,
+                 r, d, s);
 }
 
 /*
@@ -84,43 +113,79 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 /*
  1)
  */
-
+bool buyADrink(float drinkPrice, bool applyDiscount = false)
+{
+    ignoreUnused(drinkPrice, applyDiscount);
+    return {};
+}
 /*
  2)
  */
-
+void drawLinearFunctionFromOriginToCoords(int limitX, int limitY, int limitZ = 0)
+{
+    ignoreUnused(limitX, limitY, limitZ);
+}
 /*
  3)
  */
-
+void transferLuggage(char floor, short roomNumber, bool useElevator = false)
+{
+    ignoreUnused(floor, roomNumber, useElevator);
+}
 /*
  4)
  */
-
+void crossTheDistance(short speed, float requiredDistance)
+{
+    ignoreUnused(speed, requiredDistance);
+}
 /*
  5)
  */
-
+void changeState(bool binaryState, float delay = 0.33f)
+{
+    ignoreUnused(binaryState, delay);
+}
 /*
  6)
  */
-
+bool stateIsChangedTo(bool binaryState)
+{
+    ignoreUnused(binaryState);
+    return {};
+}
 /*
  7)
  */
-
+double getLicenceNumberFromLibrary(bool withExtraCode = false)
+{
+    ignoreUnused(withExtraCode);
+    return {};
+}
 /*
  8)
  */
-
+unsigned short int getAmplitudeMultiplierAfterNormalization(unsigned short int currentAmplitude, unsigned short int targetAmplitude)
+{
+    ignoreUnused(currentAmplitude, targetAmplitude);
+    return {};
+}
 /*
  9)
  */
-
+char copySecondCharFromString(int StringNumber, char defaultSymbol = 'a')
+{
+    ignoreUnused(StringNumber, defaultSymbol);
+    return {};
+}
 /*
  10)
  */
-
+unsigned long int calculateCountryArea(double countryID)
+{
+    ignoreUnused(countryID);
+    return {};
+}
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
 
@@ -141,27 +206,28 @@ int main()
     auto carRented = rentACar(6, 2); 
     
     //1)
-    
+    auto drinkBought = buyADrink(1.5f, true);
     //2)
-    
+    drawLinearFunctionFromOriginToCoords(3, 3);
     //3)
-    
+    transferLuggage(3, 345);
     //4)
-    
+    crossTheDistance(8, 24.4f);
     //5)
-    
+    changeState(false, 0.55f);
     //6)
-    
+    auto toggleChecked = stateIsChangedTo(false);
     //7)
-    
+    auto licenceNumber = getLicenceNumberFromLibrary(true);
     //8)
-    
+    auto amplitudeMultiplier = getAmplitudeMultiplierAfterNormalization(10, 12);
     //9)
-    
+    auto requestedChar = copySecondCharFromString(4);
     //10)
+    auto requestedArea = calculateCountryArea(12143488.0212);
     
+    ignoreUnused(carRented, drinkBought, toggleChecked, licenceNumber, amplitudeMultiplier, requestedChar, requestedArea);
     
-    ignoreUnused(carRented);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
