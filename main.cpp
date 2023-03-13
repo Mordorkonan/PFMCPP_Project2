@@ -226,13 +226,7 @@ int main()
     //10)
     auto requestedArea = calculateCountryArea(12143488.0212);
     
-    ignoreUnused(carRented);
-    ignoreUnused(drinkBought);
-    ignoreUnused(toggleChecked);
-    ignoreUnused(licenceNumber);
-    ignoreUnused(amplitudeMultiplier);
-    ignoreUnused(requestedChar);
-    ignoreUnused(requestedArea);
+    ignoreUnused(carRented, drinkBought, toggleChecked, licenceNumber, amplitudeMultiplier, requestedChar, requestedArea);
     
     std::cout << "good to go!" << std::endl;
     return 0;    
