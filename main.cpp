@@ -159,7 +159,7 @@ bool stateIsChangedTo(bool binaryState)
  */
 double getLicenceNumberFromLibrary(bool withExtraCode = false)
 {
-    ignoreUnused();
+    ignoreUnused(withExtraCode);
     return {};
 }
 /*
